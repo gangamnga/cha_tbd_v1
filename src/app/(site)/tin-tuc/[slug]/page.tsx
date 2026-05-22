@@ -85,7 +85,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <div className="max-w-4xl mx-auto">
 
           {/* Breadcrumb */}
-          <nav className="sticky md:static top-[118px] z-10 bg-white md:bg-transparent border-b border-gray-100 md:border-b-0 -mx-5 px-5 md:mx-0 md:px-0 py-2.5 md:py-0 mb-0 md:mb-3 flex items-center flex-wrap gap-1">
+          <nav className="sticky md:static top-[118px] z-10 bg-white md:bg-transparent border-b border-gray-100 md:border-b-0 -mx-2 px-2 md:mx-0 md:px-0 py-2.5 md:py-0 mb-0 md:mb-3 flex items-center flex-wrap gap-1">
             {catConfig.breadcrumbs.map((crumb, i) => {
               const isLast = i === catConfig.breadcrumbs.length - 1
               return (

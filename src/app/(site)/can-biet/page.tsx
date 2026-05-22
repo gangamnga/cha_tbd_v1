@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Container from "@/app/_components/container";
 import { SectionWrapper } from "@/app/_components/section-wrapper";
 import { LiturgicalCalendar } from "@/app/_components/liturgical-calendar";
@@ -195,14 +195,16 @@ export default async function CanBietPage() {
                       </div>
                     )},
                   ].filter(item => item.show).map(({ icon, label, value }) => (
-                    <div key={label} className="flex items-start px-4 lg:px-5 py-3 lg:py-4 border-b border-gray-100">
-                      <div className="w-6 h-[24px] shrink-0 flex items-center text-gray-400">
-                        {icon}
+                    <div key={label} className="flex flex-col sm:flex-row items-start px-4 lg:px-5 py-3 lg:py-4 border-b border-gray-100 gap-1 sm:gap-0">
+                      <div className="flex items-center sm:items-start shrink-0">
+                        <div className="w-6 h-[24px] shrink-0 flex items-center text-gray-400">
+                          {icon}
+                        </div>
+                        <div className="w-[110px] shrink-0 flex items-center pl-1 sm:pl-0">
+                          <span className="text-[15px] sm:text-[16px] font-semibold uppercase tracking-wide text-gray-400">{label}</span>
+                        </div>
                       </div>
-                      <div className="w-[110px] shrink-0 flex items-center">
-                        <span className="text-[16px] font-semibold uppercase tracking-wide text-gray-400">{label}</span>
-                      </div>
-                      <div className="flex-1 pl-4 text-[16px] text-gray-800 font-medium leading-snug mt-[1px]">
+                      <div className="flex-1 sm:pl-4 text-[16px] text-gray-800 font-medium leading-snug mt-[1px] pl-[28px]">
                         {value}
                       </div>
                     </div>
@@ -210,12 +212,14 @@ export default async function CanBietPage() {
 
                   {/* Theo dõi — cùng format hàng liên hệ */}
                   {socials.length > 0 && (
-                    <div className="flex items-start px-4 lg:px-5 py-3 lg:py-4 border-b border-gray-100">
-                      <div className="w-6 h-[24px] shrink-0" />
-                      <div className="w-[110px] shrink-0 flex items-center">
-                        <span className="text-[16px] font-semibold uppercase tracking-wide text-gray-400">Theo dõi</span>
+                    <div className="flex flex-col sm:flex-row items-start px-4 lg:px-5 py-3 lg:py-4 border-b border-gray-100 gap-1 sm:gap-0">
+                      <div className="flex items-center sm:items-start shrink-0">
+                        <div className="w-6 h-[24px] shrink-0 hidden sm:flex" />
+                        <div className="w-[110px] shrink-0 flex items-center">
+                          <span className="text-[15px] sm:text-[16px] font-semibold uppercase tracking-wide text-gray-400">Theo dõi</span>
+                        </div>
                       </div>
-                      <div className="flex-1 pl-4 flex gap-1.5 mt-[1px]">
+                      <div className="flex-1 sm:pl-4 pl-[28px] flex gap-1.5 mt-[1px]">
                         {socials.map(({ name, href, logo }) => (
                           <a key={name} href={href} title={name} target="_blank" rel="noopener noreferrer"
                             className="w-9 h-9 bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors rounded-lg">
@@ -228,12 +232,14 @@ export default async function CanBietPage() {
 
                   {/* Quét mã — cùng format hàng liên hệ */}
                   {qrCodes.length > 0 && (
-                    <div className="flex items-start px-4 lg:px-5 py-3 lg:py-4">
-                      <div className="w-6 shrink-0" />
-                      <div className="w-[110px] shrink-0 pt-1">
-                        <span className="text-[16px] font-semibold uppercase tracking-wide text-gray-400">Quét mã</span>
+                    <div className="flex flex-col sm:flex-row items-start px-4 lg:px-5 py-3 lg:py-4 gap-1 sm:gap-0">
+                      <div className="flex items-center sm:items-start shrink-0">
+                        <div className="w-6 h-[24px] shrink-0 hidden sm:flex" />
+                        <div className="w-[110px] shrink-0 flex items-center">
+                          <span className="text-[15px] sm:text-[16px] font-semibold uppercase tracking-wide text-gray-400">Quét mã</span>
+                        </div>
                       </div>
-                      <div className="flex-1 pl-4 flex flex-wrap gap-3 mt-[1px]">
+                      <div className="flex-1 sm:pl-4 pl-[28px] flex flex-wrap gap-3 mt-[1px]">
                         {qrCodes.map(({ name, src, logo, color }) => (
                           <div key={name} className="flex flex-col items-center gap-1.5">
                             <div className="w-[80px] h-[80px] bg-white border border-gray-200 rounded-lg overflow-hidden flex items-center justify-center p-1">
