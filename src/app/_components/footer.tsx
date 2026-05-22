@@ -1,32 +1,45 @@
-import Container from "@/app/_components/container";
-import { EXAMPLE_PATH } from "@/lib/constants";
+import Image from "next/image";
+import Container from "./container";
 
-export function Footer() {
+
+export default function Footer() {
   return (
-    <footer className="bg-neutral-50 border-t border-neutral-200 dark:bg-slate-800">
-      <Container>
-        <div className="py-28 flex flex-col lg:flex-row items-center">
-          <h3 className="text-4xl lg:text-[2.5rem] font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Statically Generated with Next.js.
-          </h3>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
-            <a
-              href="https://nextjs.org/docs/app/building-your-application/routing/layouts-and-templates"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
-            >
-              Read Documentation
-            </a>
-            <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-              className="mx-3 font-bold hover:underline"
-            >
-              View on GitHub
-            </a>
+    <footer className="relative text-white bg-vatican-blue overflow-hidden min-h-[400px] flex flex-col justify-center py-12 md:py-20">
+
+      {/* bg-footer.svg: bird at y=44 in 680px viewBox; object-right-top anchors top edge so vertical crop goes to bottom (sky = same color, invisible) */}
+      <Image
+        src="/platforms/bg-footer.svg"
+        alt=""
+        aria-hidden="true"
+        fill
+        className="object-cover object-[78%_50%] md:object-right-top pointer-events-none select-none"
+      />
+
+      <div className="absolute inset-0 bg-black/10 pointer-events-none" />
+
+      <div className="relative z-10">
+        <Container>
+          <div className="max-w-3xl mx-auto flex flex-col items-center gap-10">
+
+            <div className="flex flex-col gap-4 w-full">
+              <blockquote className="font-serif text-[22px] md:text-[30px] font-bold italic leading-snug text-center tracking-wide">
+                &ldquo;Tôi sống giữa đoàn chiên và nếu có chết<br />cũng chết giữa đoàn chiên.&rdquo;
+              </blockquote>
+              <p className="text-[16px] uppercase tracking-[0.25em] font-semibold text-white/80 text-right">
+                Phanxicô<br className="sm:hidden" /> Trương Bửu Diệp
+              </p>
+            </div>
+
+            <div className="w-full flex justify-center pt-4">
+              <p className="text-[16px] text-white/50 font-medium tracking-wide text-center">
+                © {new Date().getFullYear()} Chatruongbuudiep.com
+              </p>
+            </div>
+
           </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
+
     </footer>
   );
 }
-
-export default Footer;

@@ -38,3 +38,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Playwright auth state & generated output
+tests/.auth/admin.json
+/playwright-report/
+/test-results/
+
+# Local IDE & AI tooling
+.vscode/
+.claude/

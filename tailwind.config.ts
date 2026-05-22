@@ -9,36 +9,63 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
       colors: {
-        "accent-1": "#FAFAFA",
-        "accent-2": "#EAEAEA",
-        "accent-7": "#333",
-        success: "#0070f3",
-        cyan: "#79FFE1",
-      },
-      spacing: {
-        28: "7rem",
-      },
-      letterSpacing: {
-        tighter: "-.04em",
+        "vatican-blue": "#0083F5",
+        "vatican-blue-dark": "#0069CC",
+        "vatican-yellow": "#fcd34d",
+        "vatican-gray": "#F5F5F5",
+        "vatican-dark": "#333333",
+        "vatican-text": "#222222",
+        border: "oklch(var(--border))",
+        input: "oklch(var(--input))",
+        ring: "oklch(var(--ring))",
+        background: "oklch(var(--background))",
+        foreground: "oklch(var(--foreground))",
+        primary: {
+          DEFAULT: "oklch(var(--primary))",
+          foreground: "oklch(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "oklch(var(--secondary))",
+          foreground: "oklch(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "oklch(var(--destructive))",
+          foreground: "oklch(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "oklch(var(--muted))",
+          foreground: "oklch(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "oklch(var(--accent))",
+          foreground: "oklch(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "oklch(var(--popover))",
+          foreground: "oklch(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "oklch(var(--card))",
+          foreground: "oklch(var(--card-foreground))",
+        },
       },
       fontSize: {
-        "5xl": "2.5rem",
-        "6xl": "2.75rem",
-        "7xl": "4.5rem",
-        "8xl": "6.25rem",
+        "base": ["1.125rem", { lineHeight: "1.75rem" }], // 18px
+        "lg": ["1.25rem", { lineHeight: "1.875rem" }], // 20px
+        "xl": ["1.5rem", { lineHeight: "2rem" }], // 24px
+        "2xl": ["1.875rem", { lineHeight: "2.25rem" }], // 30px
+        "3xl": ["2.25rem", { lineHeight: "2.5rem" }], // 36px
+        "4xl": ["3rem", { lineHeight: "1.2" }], // 48px
+        "5xl": ["3.75rem", { lineHeight: "1.2" }], // 60px
       },
-      boxShadow: {
-        sm: "0 5px 10px rgba(0, 0, 0, 0.12)",
-        md: "0 8px 30px rgba(0, 0, 0, 0.12)",
+      fontFamily: {
+        sans: ['var(--font-be-vietnam-pro)', 'sans-serif'],
+        serif: ['var(--font-lora)', 'serif'],
       },
     },
   },
-  plugins: [],
+  safelist: ["lg:grid-cols-5"],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 };
 export default config;

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Catholic_Certificate_Template" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 3000 2000" style="enable-background:new 0 0 3000 2000;" xml:space="preserve">
+<defs>
+	<!-- Premium Metallic Gold Gradient -->
+	<linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+		<stop offset="0%" style="stop-color:#9A7B3E;stop-opacity:1" />
+		<stop offset="15%" style="stop-color:#C5A059;stop-opacity:1" />
+		<stop offset="30%" style="stop-color:#FDF5E6;stop-opacity:1" />
+		<stop offset="45%" style="stop-color:#D4AF37;stop-opacity:1" />
+		<stop offset="55%" style="stop-color:#F3E5AB;stop-opacity:1" />
+		<stop offset="75%" style="stop-color:#C5A059;stop-opacity:1" />
+		<stop offset="100%" style="stop-color:#806020;stop-opacity:1" />
+	</linearGradient>
+	
+	<!-- Light Ivory Background Gradient (Parchment Texture Look) -->
+	<linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+		<stop offset="0%" style="stop-color:#FCFAF5;stop-opacity:1" />
+		<stop offset="50%" style="stop-color:#F8F4EA;stop-opacity:1" />
+		<stop offset="100%" style="stop-color:#EFEBE0;stop-opacity:1" />
+	</linearGradient>
+
+	<!-- Elegant Corner Cross Ornament -->
+	<g id="cornerOrnament">
+		<circle cx="0" cy="0" r="18" fill="none" stroke="url(#goldGrad)" stroke-width="3"/>
+		<circle cx="0" cy="0" r="8" fill="url(#goldGrad)"/>
+		<!-- Cross beams -->
+		<path d="M-35,0 L35,0 M0,-35 L0,35" stroke="url(#goldGrad)" stroke-width="4" stroke-linecap="round"/>
+		<!-- Small accent dots -->
+		<circle cx="-25" cy="-25" r="3" fill="url(#goldGrad)"/>
+		<circle cx="25" cy="-25" r="3" fill="url(#goldGrad)"/>
+		<circle cx="25" cy="25" r="3" fill="url(#goldGrad)"/>
+		<circle cx="-25" cy="25" r="3" fill="url(#goldGrad)"/>
+	</g>
+</defs>
+
+<!-- 1. Background -->
+<rect width="3000" height="2000" fill="url(#bgGrad)"/>
+
+<!-- 2. Subtle Sacred Background Watermark (Low Opacity Cross & Rays) -->
+<g opacity="0.025" transform="translate(1500, 1000)">
+	<circle cx="0" cy="0" r="500" fill="none" stroke="#9A7B3E" stroke-width="4" stroke-dasharray="10,15"/>
+	<circle cx="0" cy="0" r="300" fill="none" stroke="#9A7B3E" stroke-width="2"/>
+	<!-- Radiating rays -->
+	<path d="M-600,0 L600,0 M0,-600 L0,600 M-424,-424 L424,424 M-424,424 L424,-424" stroke="#9A7B3E" stroke-width="3"/>
+	<!-- Large Cross watermark outline -->
+	<path d="M-60,-250 L60,-250 L60,-60 L250,-60 L250,60 L60,60 L60,450 L-60,450 L-60,60 L-250,60 L-250,-60 L-60,-60 Z" fill="none" stroke="#9A7B3E" stroke-width="8"/>
+</g>
+
+<!-- 3. Elegant Double Frame Borders -->
+<!-- Outer Frame -->
+<rect x="70" y="70" width="2860" height="1860" rx="15" fill="none" stroke="url(#goldGrad)" stroke-width="12"/>
+<!-- Inner Frame (Dotted & elegant) -->
+<rect x="110" y="110" width="2780" height="1780" rx="10" fill="none" stroke="url(#goldGrad)" stroke-width="3" stroke-dasharray="15,8"/>
+<!-- Inmost Accent Line -->
+<rect x="130" y="130" width="2740" height="1740" rx="8" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.6"/>
+
+<!-- 4. Corner Ornaments Placement -->
+<use xlink:href="#cornerOrnament" x="120" y="120" />
+<use xlink:href="#cornerOrnament" x="2880" y="120" />
+<use xlink:href="#cornerOrnament" x="120" y="1880" />
+<use xlink:href="#cornerOrnament" x="2880" y="1880" />
+
+<!-- 5. Top Center Sacred Latin Cross with Glowing Sun Rays -->
+<g transform="translate(1500, 310)">
+	<!-- Golden Rays / Halo behind the cross -->
+	<g opacity="0.6">
+		<circle cx="0" cy="-60" r="100" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" stroke-dasharray="4,8"/>
+		<circle cx="0" cy="-60" r="130" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.5"/>
+		<!-- Ray lines radiating from the center of the crossbar intersection -->
+		<path d="M-150,-60 L150,-60" stroke="url(#goldGrad)" stroke-width="1.5"/>
+		<path d="M0,-210 L0,90" stroke="url(#goldGrad)" stroke-width="1.5"/>
+		<path d="M-106,-166 L106,46" stroke="url(#goldGrad)" stroke-width="1.2"/>
+		<path d="M-106,46 L106,-166" stroke="url(#goldGrad)" stroke-width="1.2"/>
+	</g>
+
+	<!-- The Main Gold Cross (Elegant, 3D Beveled Look) -->
+	<!-- Drop Shadow / Glow for the cross -->
+	<path d="M-25,-175 L25,-175 L25,-85 L115,-85 L115,-35 L25,-35 L25,105 L-25,105 L-25,-35 L-115,-35 L-115,-85 L-25,-85 Z" fill="#604010" opacity="0.15" transform="translate(0, 5)"/>
+	
+	<!-- Outer Cross border -->
+	<path d="M-28,-178 L28,-178 L28,-88 L118,-88 L118,-32 L28,-32 L28,108 L-28,108 L-28,-32 L-118,-32 L-118,-88 L-28,-88 Z" fill="url(#goldGrad)"/>
+	
+	<!-- Inner Cross fill (Deep Crimson / Rich Red accents for Catholicism) -->
+	<path d="M-22,-172 L22,-172 L22,-82 L112,-82 L112,-38 L22,-38 L22,102 L-22,102 L-22,-38 L-112,-38 L-112,-82 L-22,-82 Z" fill="#800C0C"/>
+	
+	<!-- Center Golden Crucifixion Core Line / Inlay -->
+	<path d="M-5,-155 L5,-155 L5,-65 L95,-65 L95,-55 L5,-55 L5,85 L-5,85 L-5,-55 L-95,-55 L-95,-65 L-5,-65 Z" fill="url(#goldGrad)"/>
+
+	<!-- Elegant Pedestal / Base for the Cross -->
+	<!-- Tier 1 -->
+	<path d="M-50,108 L50,108 L40,123 L-40,123 Z" fill="url(#goldGrad)"/>
+	<!-- Tier 2 (Golden Arc) -->
+	<path d="M-70,123 L70,123 A70,15 0 0,1 -70,123 Z" fill="url(#goldGrad)"/>
+</g>
+</svg>

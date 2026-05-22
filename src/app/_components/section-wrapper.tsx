@@ -1,0 +1,60 @@
+"use client";
+
+import { ChevronDown } from "lucide-react";
+import { useState } from "react";
+
+interface SectionWrapperProps {
+  title: string;
+  icon: React.ReactNode;
+  children: React.ReactNode;
+  theme?: "red" | "yellow";
+  className?: string;
+  contentClassName?: string;
+  id?: string;
+}
+
+export function SectionWrapper({
+  title,
+  icon,
+  children,
+  theme = "yellow",
+  className = "",
+  contentClassName = "flex-1 flex flex-col",
+  id,
+}: SectionWrapperProps) {
+  const [isOpen, setIsOpen] = useState(true);
+
+  const headerBg = theme === "red" ? "bg-vatican-blue border-transparent" : "bg-white border-solid border-b-[3px] border-b-[#fcd34d]";
+  const headerText = theme === "red" ? "text-white" : "text-vatican-blue";
+  const iconColor = theme === "red" ? "text-white/90 group-hover:text-white" : "text-vatican-blue/80 group-hover:text-vatican-blue";
+  const hoverBg = theme === "red" ? "hover:bg-vatican-blue/95" : "hover:bg-gray-50/80";
+  const btnBg = theme === "red" ? "bg-black/10 text-white" : "bg-vatican-blue/5 text-vatican-blue";
+
+  return (
+    <div id={id} className={`bg-white rounded-lg overflow-hidden flex flex-col ${className}`}>
+      <button
+        type="button"
+        aria-expanded={isOpen}
+        className={`w-full ${headerBg} ${headerText} text-[16px] lg:text-[18px] font-bold px-[20px] h-[48px] uppercase tracking-wide flex items-center gap-2 shrink-0 cursor-pointer select-none transition-colors ${hoverBg} group`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span className={`${iconColor} transition-colors`}>{icon}</span>
+        <span className="flex-1 text-left">{title}</span>
+        <div className={`rounded p-0.5 ml-auto transition-transform duration-300 ease-in-out ${isOpen ? 'rotate-180' : 'rotate-0'} ${btnBg}`}>
+          <ChevronDown size={20} strokeWidth={2.5} />
+        </div>
+      </button>
+      {/* grid-rows-[0fr/1fr]: kỹ thuật animate height 0→auto bằng CSS Grid,
+           vì CSS transition không hỗ trợ height: auto trực tiếp */}
+      <div
+        className={`grid transition-all duration-300 ease-in-out flex-1 ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+      >
+        <div className="overflow-hidden min-h-0 w-full flex flex-col">
+          <div className={`w-full flex-1 flex flex-col ${contentClassName}`}>
+            {children}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
