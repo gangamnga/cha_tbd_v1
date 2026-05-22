@@ -100,7 +100,7 @@ export function TripSchedule({ year, trips }: { year: number; trips: PilgrimageT
           </div>
 
           {/* Thông tin bên dưới ảnh */}
-          <div className="px-4 py-4 lg:px-6 lg:py-5 border-t border-gray-200 bg-white">
+          <div className="px-2.5 sm:px-4 lg:px-6 py-4 lg:py-5 border-t border-gray-200 bg-white">
             <h3 className="font-black text-[18px] text-vatican-dark leading-snug mb-2">
               {active.title}
             </h3>
@@ -133,7 +133,7 @@ export function TripSchedule({ year, trips }: { year: number; trips: PilgrimageT
 
         {/* ── Hàng 3: Cards chọn chuyến ── */}
         {filtered.length > 0 && (
-          <div className="flex overflow-x-auto gap-3 p-4 bg-gray-50 border-t border-gray-200 [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
+          <div className="flex overflow-x-auto gap-3 px-2.5 sm:px-4 py-3 sm:py-4 bg-gray-50 border-t border-gray-200 [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
             {filtered.map((trip, i) => {
               const isActive = trip === active;
               return (

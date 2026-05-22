@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { createClient } from "@/utils/supabase/server";
 import Container from "@/app/_components/container";
 import { SectionWrapper } from "@/app/_components/section-wrapper";
@@ -86,7 +86,7 @@ export default async function OnLanhPage({
           theme="yellow"
           className="mb-8"
         >
-          <div className="bg-white p-4 lg:p-5">
+          <div className="bg-white px-2 sm:px-4 lg:px-5 py-2.5 sm:py-4 lg:py-5">
             <div className="flex flex-col lg:flex-row gap-5 items-start">
 
               {/* Cột trái: bộ lọc danh mục */}
@@ -144,16 +144,16 @@ export default async function OnLanhPage({
           icon={<MessageSquare size={18} strokeWidth={2.5} />}
           theme="yellow"
         >
-          <div className="bg-white p-4 lg:p-5">
+          <div className="bg-white px-2 sm:px-4 lg:px-5 py-2.5 sm:py-4 lg:py-5">
             <div className="flex flex-col lg:flex-row gap-5">
 
               <div className="w-full lg:w-1/3 shrink-0 flex flex-col gap-4">
-                <div className="bg-white px-4 py-4 border-l-4 border-vatican-blue rounded-r-lg">
+                <div className="bg-white px-3 sm:px-4 py-3.5 sm:py-4 border-l-4 border-vatican-blue rounded-r-lg">
                   <p className="text-[16px] text-gray-700 leading-relaxed">
                     Nếu bạn đã nhận được ơn lành qua lời cầu bầu của Cha Phanxicô Trương Bửu Diệp, hãy chia sẻ để cùng tôn vinh Thiên Chúa và củng cố đức tin cộng đồng.
                   </p>
                 </div>
-                <div className="bg-white px-4 py-4 border border-gray-200 rounded-lg">
+                <div className="bg-white px-3 sm:px-4 py-3.5 sm:py-4 border border-gray-200 rounded-lg">
                   <p className="text-[16px] font-bold uppercase tracking-wide text-gray-500 mb-3">Lưu ý khi gửi</p>
                   <ul className="flex flex-col gap-2">
                     {[

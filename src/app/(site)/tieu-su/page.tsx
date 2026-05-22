@@ -23,7 +23,7 @@ function StepList({ steps }: { steps: Step[] }) {
   return (
     <div className="flex flex-col gap-3">
       {steps.map((step) => (
-        <div key={step.id} className="bg-white border border-gray-200 flex items-start gap-4 px-4 py-3.5 rounded-lg">
+        <div key={step.id} className="bg-white border border-gray-200 flex items-start gap-3 sm:gap-4 px-2.5 sm:px-4 py-3 sm:py-3.5 rounded-lg">
           <div className="shrink-0 mt-0.5">
             {step.done ? (
               <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center">
@@ -82,7 +82,7 @@ export default async function TieuSuPage() {
 
         {/* ROW 1: Lược sử */}
         <SectionWrapper id="luoc-su" title="LƯỢC SỬ" icon={<Star size={18} strokeWidth={2.5} />} theme="yellow" className="mb-8">
-          <div className="bg-white p-4 lg:p-5">
+          <div className="bg-white px-2 sm:px-4 lg:px-5 py-2.5 sm:py-4 lg:py-5">
             <div className="flex flex-col sm:flex-row gap-[20px]">
               <div className="w-[200px] sm:w-[360px] mx-auto sm:mx-0 shrink-0">
                 <div className="relative w-full aspect-[3/4] overflow-hidden rounded-lg">
@@ -116,16 +116,16 @@ export default async function TieuSuPage() {
 
         {/* ROW 2: Tiến trình phong Chân Phước */}
         <SectionWrapper title="TIẾN TRÌNH PHONG CHÂN PHƯỚC" icon={<Award size={18} strokeWidth={2.5} />} theme="yellow" className="mb-8" id="phong-chan-phuoc">
-          <div className="bg-white p-4 lg:p-5">
+          <div className="bg-white px-2 sm:px-4 lg:px-5 py-2.5 sm:py-4 lg:py-5">
             <StepList steps={beatSteps ?? []} />
           </div>
         </SectionWrapper>
 
         {/* ROW 3: Tiến trình phong Thánh */}
         <SectionWrapper title="TIẾN TRÌNH PHONG THÁNH" icon={<Crown size={18} strokeWidth={2.5} />} theme="yellow" className="mb-8" id="phong-thanh">
-          <div className="bg-white p-4 lg:p-5 flex flex-col gap-5">
+          <div className="bg-white px-2 sm:px-4 lg:px-5 py-2.5 sm:py-4 lg:py-5 flex flex-col gap-5">
             {/* Mô tả */}
-            <div className="bg-amber-50 border border-amber-200 rounded-lg px-5 py-4">
+            <div className="bg-amber-50 border border-amber-200 rounded-lg px-3 sm:px-5 py-3 sm:py-4">
               <p className="text-[18px] text-gray-700 leading-relaxed">
                 Sau khi được tuyên phong <strong className="text-vatican-dark">Chân Phước</strong>, bước tiếp theo để được tôn phong{' '}
                 <strong className="text-vatican-dark">Hiển Thánh</strong> đòi hỏi Giáo hội xác nhận thêm{' '}

@@ -62,14 +62,14 @@ export function HymnList({ hymns, playlists = [], perPage = 8 }: HymnListProps) 
 
   return (
     <>
-      <div className="flex flex-col gap-0 lg:gap-[20px] lg:grid lg:grid-cols-3 lg:h-[680px] px-[20px] pt-[12px] pb-[20px] lg:p-[20px]">
+      <div className="flex flex-col gap-0 lg:gap-[20px] lg:grid lg:grid-cols-3 lg:h-[680px] px-2 sm:px-5 pt-[12px] pb-[20px] lg:p-[20px]">
 
         {/* Mobile: chip ngang cuộn */}
-          <div className="flex lg:hidden w-[calc(100%+40px)] -ml-[20px] pr-[20px] overflow-x-auto [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
+          <div className="flex lg:hidden w-[calc(100%+16px)] -ml-2 pr-2 sm:w-[calc(100%+40px)] sm:-ml-5 sm:pr-5 overflow-x-auto [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
             <div className="sticky left-0 shrink-0 flex items-center bg-white z-10">
               <button
                 onClick={() => handlePlaylist(null)}
-                className={`shrink-0 flex items-center pl-[20px] pr-3 py-3 text-[16px] font-bold transition-colors ${
+                className={`shrink-0 flex items-center pl-2 sm:pl-5 pr-3 py-3 text-[16px] font-bold transition-colors ${
                   !selectedPlaylist ? "text-vatican-blue pointer-events-none" : "text-gray-500"
                 }`}
               >

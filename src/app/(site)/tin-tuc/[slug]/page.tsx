@@ -104,7 +104,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </nav>
 
           {/* Main card */}
-          <div className="bg-white px-4 py-6 md:p-10 md:rounded-xl md:border md:border-gray-200">
+          <div className="bg-white px-2 sm:px-6 md:p-10 py-5 md:py-10 md:rounded-xl md:border md:border-gray-200">
             <header className="mb-6 md:mb-8">
               <h1 className="text-[18px] font-bold text-vatican-dark leading-tight mb-3 md:mb-4">
                 {article.title}
@@ -126,7 +126,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             )}
 
             {article.summary && (
-              <div className="text-[18px] font-medium text-gray-700 mb-8 p-4 bg-gray-50 border-l-4 border-vatican-blue rounded-r-lg">
+              <div className="text-[18px] font-medium text-gray-700 mb-8 px-3 sm:px-4 py-3.5 sm:py-4 bg-gray-50 border-l-4 border-vatican-blue rounded-r-lg">
                 {article.summary}
               </div>
             )}
@@ -141,7 +141,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
           {/* Related articles */}
           {relatedArticles && relatedArticles.length > 0 && (
-            <div className="mt-8 px-4 md:px-0">
+            <div className="mt-8 px-2 md:px-0">
               <h2 className="text-[18px] font-bold text-vatican-dark mb-4">Bài viết liên quan</h2>
               <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
                 {relatedArticles.map(item => (

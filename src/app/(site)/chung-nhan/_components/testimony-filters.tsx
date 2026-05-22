@@ -15,11 +15,11 @@ export function TestimonyFilters({
   return (
     <>
       {/* Mobile: chip ngang cuộn, "Tất cả" ghim trái */}
-      <div className="flex lg:hidden w-[calc(100%+40px)] -ml-[20px] pr-[20px] overflow-x-auto [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
+      <div className="flex lg:hidden w-[calc(100%+16px)] -ml-2 pr-2 sm:w-[calc(100%+40px)] sm:-ml-5 sm:pr-5 overflow-x-auto [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
         <div className="sticky left-0 shrink-0 flex items-center bg-white z-10">
           <Link
             href="/chung-nhan?cat=tat-ca&page=1"
-            className={`shrink-0 flex items-center pl-[20px] pr-3 py-3 text-[16px] font-bold transition-colors ${
+            className={`shrink-0 flex items-center pl-2 sm:pl-5 pr-3 py-3 text-[16px] font-bold transition-colors ${
               activeCategory === "tat-ca"
                 ? "text-vatican-blue pointer-events-none"
                 : "text-gray-500"

@@ -106,7 +106,7 @@ export default async function CanBietPage() {
             className="w-full lg:w-1/3"
             id="gio-le"
           >
-            <div className="bg-white p-4 lg:p-5 flex flex-col gap-3 flex-1 w-full">
+            <div className="bg-white px-2 sm:px-4 lg:px-5 py-2.5 sm:py-4 lg:py-5 flex flex-col gap-3 flex-1 w-full">
               {(!massMeta && schedule.length === 0) ? (
                 <div className="flex flex-col items-center justify-center py-12 px-4 text-gray-400 border border-dashed border-gray-200 rounded-lg h-full min-h-[300px]">
                   <Clock size={48} strokeWidth={1} className="mb-4 text-gray-300" />
@@ -129,7 +129,7 @@ export default async function CanBietPage() {
                     </div>
                   )}
                   {schedule.map(({ id, day_label, times }) => (
-                    <div key={id} className="bg-white px-4 py-3.5 rounded-lg border border-gray-200">
+                    <div key={id} className="bg-white px-3 sm:px-4 py-2.5 sm:py-3.5 rounded-lg border border-gray-200">
                       <p className="font-bold text-[16px] lg:text-[18px] text-vatican-blue mb-2.5">{day_label}</p>
                       <div className="flex flex-wrap gap-2">
                         {Array.isArray(times) && (times as string[]).map((t) => (
@@ -157,7 +157,7 @@ export default async function CanBietPage() {
             id="cong-dong"
           >
             {!ci ? (
-              <div className="bg-white p-4 lg:p-5 flex-1 flex flex-col w-full">
+              <div className="bg-white px-2 sm:px-4 lg:px-5 py-2.5 sm:py-4 lg:py-5 flex-1 flex flex-col w-full">
                 <div className="flex flex-col items-center justify-center py-12 px-4 text-gray-400 border border-dashed border-gray-200 rounded-lg h-full min-h-[300px]">
                   <HeartHandshake size={48} strokeWidth={1} className="mb-4 text-gray-300" />
                   <p className="text-[16px] text-gray-500 text-center max-w-md">
@@ -167,7 +167,7 @@ export default async function CanBietPage() {
               </div>
             ) : (
               <div className="bg-white flex-1 flex flex-col">
-                <div className="px-4 lg:px-5 pt-4 lg:pt-5 pb-3 border-b border-gray-100 flex items-center gap-2 flex-wrap shrink-0">
+                <div className="px-2 sm:px-4 lg:px-5 pt-3.5 sm:pt-4 lg:pt-5 pb-2.5 sm:pb-3 border-b border-gray-100 flex items-center gap-2 flex-wrap shrink-0">
                   <p className="text-[16px] lg:text-[18px] font-black text-vatican-dark uppercase tracking-wide leading-tight">{ci.name || 'Chatruongbuudiep'}</p>
                 </div>
                 <div className="flex flex-col">
@@ -195,7 +195,7 @@ export default async function CanBietPage() {
                       </div>
                     )},
                   ].filter(item => item.show).map(({ icon, label, value }) => (
-                    <div key={label} className="flex flex-col sm:flex-row items-start px-4 lg:px-5 py-3 lg:py-4 border-b border-gray-100 gap-1 sm:gap-0">
+                    <div key={label} className="flex flex-col sm:flex-row items-start px-2 sm:px-4 lg:px-5 py-3 lg:py-4 border-b border-gray-100 gap-1 sm:gap-0">
                       <div className="flex items-center sm:items-start shrink-0">
                         <div className="w-6 h-[24px] shrink-0 flex items-center text-gray-400">
                           {icon}
@@ -212,7 +212,7 @@ export default async function CanBietPage() {
 
                   {/* Theo dõi — cùng format hàng liên hệ */}
                   {socials.length > 0 && (
-                    <div className="flex flex-col sm:flex-row items-start px-4 lg:px-5 py-3 lg:py-4 border-b border-gray-100 gap-1 sm:gap-0">
+                    <div className="flex flex-col sm:flex-row items-start px-2 sm:px-4 lg:px-5 py-3 lg:py-4 border-b border-gray-100 gap-1 sm:gap-0">
                       <div className="flex items-center sm:items-start shrink-0">
                         <div className="w-6 h-[24px] shrink-0 hidden sm:flex" />
                         <div className="w-[110px] shrink-0 flex items-center">
@@ -232,7 +232,7 @@ export default async function CanBietPage() {
 
                   {/* Quét mã — cùng format hàng liên hệ */}
                   {qrCodes.length > 0 && (
-                    <div className="flex flex-col sm:flex-row items-start px-4 lg:px-5 py-3 lg:py-4 gap-1 sm:gap-0">
+                    <div className="flex flex-col sm:flex-row items-start px-2 sm:px-4 lg:px-5 py-3 lg:py-4 gap-1 sm:gap-0">
                       <div className="flex items-center sm:items-start shrink-0">
                         <div className="w-6 h-[24px] shrink-0 hidden sm:flex" />
                         <div className="w-[110px] shrink-0 flex items-center">
@@ -268,7 +268,7 @@ export default async function CanBietPage() {
             className="w-full lg:w-2/3 flex flex-col"
             id="hoat-dong-cong-dong"
           >
-            <div className="bg-white p-4 lg:p-5 flex-1 flex flex-col w-full">
+            <div className="bg-white px-2 sm:px-4 lg:px-5 py-2.5 sm:py-4 lg:py-5 flex-1 flex flex-col w-full">
               <CommunityArticlesGrid articles={congDongArticles ?? []} />
             </div>
           </SectionWrapper>

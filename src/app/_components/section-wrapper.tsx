@@ -35,7 +35,7 @@ export function SectionWrapper({
       <button
         type="button"
         aria-expanded={isOpen}
-        className={`w-full ${headerBg} ${headerText} text-[16px] lg:text-[18px] font-bold px-[20px] h-[48px] uppercase tracking-wide flex items-center gap-2 shrink-0 cursor-pointer select-none transition-colors ${hoverBg} group`}
+        className={`w-full ${headerBg} ${headerText} text-[16px] lg:text-[18px] font-bold px-2 sm:px-5 h-[48px] uppercase tracking-wide flex items-center gap-2 shrink-0 cursor-pointer select-none transition-colors ${hoverBg} group`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className={`${iconColor} transition-colors`}>{icon}</span>

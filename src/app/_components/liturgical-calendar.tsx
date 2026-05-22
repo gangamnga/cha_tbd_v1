@@ -14,7 +14,7 @@ export function LiturgicalCalendar() {
   const monthData = calendar.find((m) => m.number === activeMonth) ?? calendar[0];
 
   return (
-    <div className="bg-white p-4 lg:p-5">
+    <div className="bg-white px-2 sm:px-4 lg:px-5 py-2.5 sm:py-4 lg:py-5">
 
       {/* Navigation Bar */}
       <div className="flex border-b border-gray-200 w-full overflow-x-auto [&::-webkit-scrollbar]:hidden [scrollbar-width:none] mb-4">
@@ -61,7 +61,7 @@ export function LiturgicalCalendar() {
       </div>
 
       {/* Month heading */}
-      <div className="bg-white border-l-4 border-vatican-blue px-4 py-2.5 mb-3 flex flex-col lg:flex-row lg:items-center justify-between gap-1 lg:gap-4">
+      <div className="bg-white border-l-4 border-vatican-blue px-3 sm:px-4 py-2.5 mb-3 flex flex-col lg:flex-row lg:items-center justify-between gap-1 lg:gap-4">
         <h3 className="text-[16px] lg:text-[18px] font-bold text-vatican-dark uppercase tracking-wide">
           {monthData.name} năm {year} — {monthData.feasts.length} lễ
         </h3>
@@ -73,7 +73,7 @@ export function LiturgicalCalendar() {
       {/* Feast list */}
       <div className="flex flex-col gap-2">
         {monthData.feasts.map((feast, i) => (
-          <div key={i} className="bg-white flex items-start gap-3 px-4 py-3">
+          <div key={i} className="bg-white flex items-start gap-3 px-3 sm:px-4 py-3">
             <div className={`shrink-0 flex flex-col items-center justify-center border rounded-lg px-2 py-1.5 min-w-[56px] ${
               feast.level === 'solemnity' ? 'bg-vatican-blue border-vatican-blue' : 'bg-gray-100 border-gray-200'
             }`}>

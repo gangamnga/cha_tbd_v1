@@ -65,9 +65,9 @@ export default async function CungCauNguyenPage() {
             className="lg:col-span-2"
             id="gui-y-chi"
           >
-            <div className="bg-white p-4 lg:p-5">
+            <div className="bg-white px-2 sm:px-4 lg:px-5 py-2.5 sm:py-4 lg:py-5">
 
-              <div className="bg-white px-4 py-2.5 border-l-4 border-vatican-blue mb-3 rounded-r-lg">
+              <div className="bg-white px-3 sm:px-4 py-2.5 border-l-4 border-vatican-blue mb-3 rounded-r-lg">
                 <p className="text-[16px] lg:text-[18px] text-gray-700 leading-relaxed">
                   Hãy gửi ý chỉ để được cộng đồng hiệp lời cầu nguyện cho bạn và những người thân yêu.
                 </p>

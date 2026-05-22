@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Container from "@/app/_components/container";
 import { SectionWrapper } from "@/app/_components/section-wrapper";
 import { CommunityArticlesGrid } from "@/app/_components/community-articles-grid";
@@ -50,7 +50,7 @@ export default async function HanhHuongPage() {
           theme="yellow"
           className="mb-8"
         >
-          <div className="bg-white p-4 lg:p-5 flex flex-col">
+          <div className="bg-white px-2 sm:px-4 lg:px-5 py-2.5 sm:py-4 lg:py-5 flex flex-col">
             <CommunityArticlesGrid articles={articleRows ?? []} />
           </div>
         </SectionWrapper>
@@ -62,7 +62,7 @@ export default async function HanhHuongPage() {
           icon={<Calendar size={18} strokeWidth={2.5} />}
           theme="yellow"
         >
-          <div className="bg-white p-4 lg:p-5 flex flex-col">
+          <div className="bg-white px-2 sm:px-4 lg:px-5 py-2.5 sm:py-4 lg:py-5 flex flex-col">
             {trips.length === 0 ? (
               <div className="flex flex-col items-center justify-center py-12 px-4 text-gray-400">
                 <Calendar size={48} strokeWidth={1} className="mb-4 text-gray-300" />
@@ -73,7 +73,7 @@ export default async function HanhHuongPage() {
             ) : (
               <>
                 {/* Lời ngỏ đính chính cộng đồng */}
-                <div className="mb-4 lg:mb-6 bg-blue-50/50 border border-vatican-blue/20 px-4 py-3.5 rounded-lg flex gap-3 items-start">
+                <div className="mb-4 lg:mb-6 bg-blue-50/50 border border-vatican-blue/20 px-3 sm:px-4 py-3 sm:py-3.5 rounded-lg flex gap-3 items-start">
                   <div className="text-vatican-blue mt-0.5 shrink-0">
                     <Info size={18} strokeWidth={2.5} />
                   </div>
