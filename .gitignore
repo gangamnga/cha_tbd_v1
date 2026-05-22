@@ -47,3 +47,5 @@ tests/.auth/admin.json
 # Local IDE & AI tooling
 .vscode/
 .claude/
+
+.vercel

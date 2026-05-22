@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/app/_components/container";
 import { BookHeart, Megaphone, NotebookText, ArrowRight, Newspaper } from "lucide-react";
@@ -183,7 +183,7 @@ export default async function Index() {
             >
               <div className="flex flex-col flex-1">
                 {/* Mobile: 2-col card grid */}
-                <div className="lg:hidden px-4 py-4 grid grid-cols-2 gap-4">
+                <div className="lg:hidden px-3 py-3 grid grid-cols-2 gap-3">
                   {hanhHuongArticles.slice(0, 6).map((item) => (
                     <ArticleCard
                       key={item.id}

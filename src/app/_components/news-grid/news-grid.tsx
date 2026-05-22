@@ -26,7 +26,7 @@ export function NewsGrid({ articles }: NewsGridProps) {
   const featuredArticles = [combinedData[1], combinedData[2]].filter(Boolean);
 
   return (
-    <div className="px-4 lg:px-5 py-4 lg:py-[18px] flex-1 flex flex-col">
+    <div className="px-3 md:px-4 lg:px-5 py-3 md:py-4 lg:py-[18px] flex-1 flex flex-col">
       <div className="flex flex-col lg:flex-row gap-5 lg:gap-6">
         {/* Featured: 2 stacked cards, 1/3 width */}
         {featuredArticles.length > 0 && (
