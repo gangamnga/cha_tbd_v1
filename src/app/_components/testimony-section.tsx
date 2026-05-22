@@ -16,7 +16,7 @@ export function TestimonySection({ articles }: TestimonySectionProps) {
   }
 
   return (
-    <div className="px-3 md:px-4 lg:px-5 py-3 md:py-4 lg:py-5 grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-5">
+    <div className="px-2 md:px-4 lg:px-5 py-2 md:py-4 lg:py-5 grid grid-cols-2 lg:grid-cols-3 gap-2.5 md:gap-4 lg:gap-5">
       {articles.slice(0, 6).map((item) => (
         <ArticleCard
           key={item.id}

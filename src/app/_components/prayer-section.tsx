@@ -41,7 +41,7 @@ export function LoiKinhWidget({ prayers }: { prayers: Prayer[] }) {
             <p className="text-[16px] text-center text-gray-400">Chưa có lời kinh.</p>
           </div>
         ) : (
-          <div className="flex flex-col flex-1 px-3 md:px-4 py-2">
+          <div className="flex flex-col flex-1 px-2 md:px-4 py-2">
             {prayers.map((prayer, i) => (
               <div key={i} className="flex flex-col group border-b border-gray-200 last:border-0 cursor-default">
                 <button
@@ -97,7 +97,7 @@ export function ThanhCaWidget({ hymns }: { hymns: Hymn[] }) {
             <p className="text-[16px] text-center text-gray-400">Chưa có bài thánh ca nào.</p>
           </div>
         ) : (
-          <div className="flex flex-col flex-1 px-3 md:px-4 py-2">
+          <div className="flex flex-col flex-1 px-2 md:px-4 py-2">
             {hymns.map((hymn, i) => (
               <button
                 key={i}

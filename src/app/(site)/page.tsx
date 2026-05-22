@@ -183,7 +183,7 @@ export default async function Index() {
             >
               <div className="flex flex-col flex-1">
                 {/* Mobile: 2-col card grid */}
-                <div className="lg:hidden px-3 py-3 grid grid-cols-2 gap-3">
+                <div className="lg:hidden px-2 py-2 grid grid-cols-2 gap-2.5">
                   {hanhHuongArticles.slice(0, 6).map((item) => (
                     <ArticleCard
                       key={item.id}
