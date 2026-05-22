@@ -98,11 +98,11 @@ export default async function TieuSuPage() {
                 <table className="w-full">
                   <tbody>
                     {(facts ?? []).map(({ id, label, value }, i, arr) => (
-                      <tr key={id} className={i < arr.length - 1 ? "border-b border-gray-100" : ""}>
-                        <td className="py-3 pl-4 pr-3 align-top w-[140px] shrink-0">
-                          <span className="text-[16px] font-semibold uppercase tracking-wide text-gray-400 whitespace-nowrap">{label}</span>
+                      <tr key={id} className={`flex flex-col sm:table-row ${i < arr.length - 1 ? "border-b border-gray-100" : ""}`}>
+                        <td className="pt-3 pb-1 pl-4 pr-4 sm:py-3 sm:pl-4 sm:pr-3 align-top w-full sm:w-[140px] shrink-0 block sm:table-cell">
+                          <span className="text-[15px] sm:text-[16px] font-semibold uppercase tracking-wide text-gray-400 whitespace-nowrap">{label}</span>
                         </td>
-                        <td className="py-3 pr-4 align-top">
+                        <td className="pt-0 pb-3 pl-4 pr-4 sm:py-3 sm:pl-0 sm:pr-4 align-top block sm:table-cell">
                           <span className="text-[18px] text-vatican-dark font-bold leading-snug whitespace-pre-line">{value}</span>
                         </td>
                       </tr>
