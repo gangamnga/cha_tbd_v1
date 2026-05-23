@@ -76,33 +76,32 @@ export default function MobileNav() {
             <Award size={24} strokeWidth={2} className="text-white" />
           </div>
 
-          {/* SVG curved text — arc follows bottom of circle */}
-          {/* SVG top aligns with circle center (6px above bar bottom) */}
+          {/* SVG curved text — radius 30 = circleRadius(26) + gap(4) */}
+          {/* SVG bottom=-34 aligns SVG y=0 with circle center */}
           <svg
             width="84"
-            height="40"
-            viewBox="0 0 84 40"
+            height="36"
+            viewBox="0 0 84 36"
             overflow="visible"
             style={{
               position: "absolute",
-              bottom: -22,
+              bottom: -34,
               left: "50%",
               transform: "translateX(-50%)",
             }}
           >
             <defs>
-              {/* Semicircle arc, radius 36, sweeping clockwise through bottom */}
-              <path id="navCurve" d="M 6,0 A 36,36 0 0,1 78,0" />
+              <path id="navCurve" d="M 12,0 A 30,30 0 0,1 72,0" />
             </defs>
             <text
-              fontSize="8.5"
-              fontWeight="700"
-              letterSpacing="2"
-              fontFamily="system-ui, -apple-system, sans-serif"
+              fontSize="10"
+              fontWeight="600"
+              letterSpacing="0.4"
+              fontFamily="inherit"
               fill={textColor}
             >
               <textPath href="#navCurve" startOffset="50%" textAnchor="middle">
-                TIỂU SỬ
+                Tiểu Sử
               </textPath>
             </text>
           </svg>
