@@ -60,22 +60,22 @@ export default function MobileNav() {
         >
           {/* Label inside bar */}
           <span
-            className={`absolute top-[8px] text-[10px] font-semibold leading-none tracking-wide transition-colors duration-200 ${
+            className={`absolute top-[3px] text-[10px] font-semibold leading-none tracking-wide transition-colors duration-200 ${
               isCenterActive ? "text-vatican-blue" : "text-slate-400"
             }`}
           >
             {NAV_CENTER.label}
           </span>
 
-          {/* FAB circle — overlaps bar bottom edge */}
+          {/* FAB circle — max size, overlaps bar bottom */}
           <div
-            className={`absolute w-[52px] h-[52px] rounded-full flex items-center justify-center border-[3px] border-white z-20 transition-colors duration-200 shadow-[0_4px_16px_rgba(0,0,0,0.20)]  ${
+            className={`absolute w-[64px] h-[64px] rounded-full flex items-center justify-center border-[3px] border-white z-20 transition-colors duration-200 shadow-[0_6px_20px_rgba(0,0,0,0.22)] ${
               isCenterActive ? "bg-vatican-blue" : "bg-slate-700"
             }`}
-            style={{ top: 20 }}
+            style={{ top: 14 }}
           >
             {/* Placeholder — thay bằng <Image> avatar sau */}
-            <Award size={24} strokeWidth={2} className="text-white" />
+            <Award size={28} strokeWidth={2} className="text-white" />
           </div>
         </Link>
 
