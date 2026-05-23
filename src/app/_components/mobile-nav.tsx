@@ -3,63 +3,100 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Award, Flame, Heart, MapPin } from "lucide-react";
+import { Home, Flame, Heart, MapPin, Award } from "lucide-react";
 
-const NAV_ITEMS = [
-  { label: "Trang Chủ", href: "/", icon: Home },
-  { label: "Tiểu Sử", href: "/tieu-su", icon: Award },
+const NAV_LEFT = [
+  { label: "Trang Chủ",  href: "/",                icon: Home },
   { label: "Cầu Nguyện", href: "/cung-cau-nguyen", icon: Flame },
+];
+
+const NAV_CENTER = { label: "Tiểu Sử", href: "/tieu-su" };
+
+const NAV_RIGHT = [
   { label: "Chứng Nhân", href: "/chung-nhan", icon: Heart },
-  { label: "Cần Biết", href: "/can-biet", icon: MapPin },
+  { label: "Cần Biết",   href: "/can-biet",   icon: MapPin },
 ];
 
 export default function MobileNav() {
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
+  useEffect(() => { setMounted(true); }, []);
   if (!mounted) return null;
 
+  const isCenterActive =
+    pathname === NAV_CENTER.href || pathname.startsWith(NAV_CENTER.href);
+
   return (
-    <div className="sticky top-[70px] left-0 right-0 z-40 lg:hidden bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-[0_4px_16px_rgba(0,0,0,0.04)] py-2.5 px-4">
-      <div className="flex items-center justify-between max-w-md mx-auto">
-        {NAV_ITEMS.map((item) => {
+    <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white border-t border-slate-100 shadow-[0_-4px_20px_rgba(0,0,0,0.07)] pb-[env(safe-area-inset-bottom,0px)]">
+      <div className="flex items-end justify-around h-[60px] px-2 relative">
+
+        {/* Left items */}
+        {NAV_LEFT.map((item) => {
           const isActive =
             pathname === item.href ||
             (item.href !== "/" && pathname.startsWith(item.href));
-
-          const IconComponent = item.icon;
-
+          const Icon = item.icon;
           return (
             <Link
               key={item.href}
               href={item.href}
-              className={`flex items-center justify-center rounded-full transition-all duration-300 ease-out select-none ${
-                isActive
-                  ? "bg-[#E6F3FF] text-[#0083F5] px-4 py-2 shadow-sm shadow-blue-100/50"
-                  : "text-slate-400 hover:text-slate-600 p-2.5"
+              className={`flex flex-col items-center justify-center gap-1 flex-1 h-full transition-colors duration-200 ${
+                isActive ? "text-vatican-blue" : "text-slate-400"
               }`}
             >
-              <IconComponent
-                className={`w-5.5 h-5.5 transition-transform duration-300 ${
-                  isActive ? "scale-105 stroke-[2.5]" : "stroke-[2]"
-                }`}
-              />
-              <span
-                className={`text-[14px] font-bold tracking-wide transition-all duration-300 ease-out overflow-hidden whitespace-nowrap ${
-                  isActive
-                    ? "max-w-[100px] ml-2.5 opacity-100"
-                    : "max-w-0 opacity-0 ml-0"
-                }`}
-              >
+              <Icon size={22} strokeWidth={isActive ? 2.5 : 1.8} />
+              <span className="text-[10px] font-semibold leading-none tracking-wide">
                 {item.label}
               </span>
             </Link>
           );
         })}
+
+        {/* Center — elevated avatar button */}
+        <Link
+          href={NAV_CENTER.href}
+          className="flex flex-col items-center justify-end flex-1 h-full pb-1 relative"
+        >
+          <div
+            className={`absolute -top-4 w-[54px] h-[54px] rounded-full flex items-center justify-center shadow-lg border-[3px] transition-all duration-200 ${
+              isCenterActive
+                ? "bg-vatican-blue border-white"
+                : "bg-slate-700 border-white"
+            }`}
+          >
+            {/* Placeholder — anh thay bằng <Image> avatar sau */}
+            <Award size={26} strokeWidth={2} className="text-white" />
+          </div>
+          <span
+            className={`text-[10px] font-semibold leading-none tracking-wide mt-auto mb-0 transition-colors duration-200 ${
+              isCenterActive ? "text-vatican-blue" : "text-slate-400"
+            }`}
+          >
+            {NAV_CENTER.label}
+          </span>
+        </Link>
+
+        {/* Right items */}
+        {NAV_RIGHT.map((item) => {
+          const isActive = pathname.startsWith(item.href);
+          const Icon = item.icon;
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`flex flex-col items-center justify-center gap-1 flex-1 h-full transition-colors duration-200 ${
+                isActive ? "text-vatican-blue" : "text-slate-400"
+              }`}
+            >
+              <Icon size={22} strokeWidth={isActive ? 2.5 : 1.8} />
+              <span className="text-[10px] font-semibold leading-none tracking-wide">
+                {item.label}
+              </span>
+            </Link>
+          );
+        })}
+
       </div>
     </div>
   );

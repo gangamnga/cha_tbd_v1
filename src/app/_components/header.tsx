@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Container from "./container";
 import Image from "next/image";
-import { Search, Menu, X, Star, Award, Crown, Milestone, Bell, Flame, BookText, Music, MessageSquare, NotebookText, Calendar, MapPin, Clock, BookHeart, CalendarDays, HeartHandshake, Newspaper, Youtube, Facebook, Tiktok } from "lucide-react";
+import { Search, Menu, X, Star, Award, Crown, Milestone, Bell, Flame, BookText, Music, MessageSquare, NotebookText, Calendar, MapPin, Clock, BookHeart, CalendarDays, HeartHandshake, Newspaper } from "lucide-react";
 
 // Map section → pathname tương ứng, dùng để validate ref tránh stale
 const SECTION_PATH: Record<string, string> = {
@@ -22,15 +22,15 @@ const SECTION_PATH: Record<string, string> = {
 
 
 const socialLinksMobile = [
-  { name: "YouTube",   href: "https://www.youtube.com/@chatruongbuudiep",  icon: Youtube },
-  { name: "TikTok",    href: "https://www.tiktok.com/@chatruongbuudiep",   icon: Tiktok },
-  { name: "Facebook",  href: "https://www.facebook.com/chatruongbuudiep",  icon: Facebook },
+  { name: "YouTube",   href: "https://www.youtube.com/@chatruongbuudiep",  logo: "/platforms/youtube - MXH.svg" },
+  { name: "TikTok",    href: "https://www.tiktok.com/@chatruongbuudiep",   logo: "/platforms/tiktok - MXH.svg" },
+  { name: "Facebook",  href: "https://www.facebook.com/chatruongbuudiep",  logo: "/platforms/facebook - MXH.svg" },
 ];
 
 const socialLinksDesktop = [
-  { name: "YouTube",   href: "https://www.youtube.com/@chatruongbuudiep",  icon: Youtube },
-  { name: "TikTok",    href: "https://www.tiktok.com/@chatruongbuudiep",   icon: Tiktok },
-  { name: "Facebook",  href: "https://www.facebook.com/chatruongbuudiep",  icon: Facebook },
+  { name: "YouTube",   href: "https://www.youtube.com/@chatruongbuudiep",  logo: "/platforms/youtube.svg" },
+  { name: "TikTok",    href: "https://www.tiktok.com/@chatruongbuudiep",   logo: "/platforms/tiktok.svg" },
+  { name: "Facebook",  href: "https://www.facebook.com/chatruongbuudiep",  logo: "/platforms/facebook.svg" },
 ];
 
 const subMenuLinks = [
@@ -215,16 +215,16 @@ export default function Header() {
               {/* Social icons */}
               <div className="flex items-center gap-3">
                 <div className="w-[1px] h-4 bg-gray-300 mr-2" /> {/* Divider */}
-                {socialLinksDesktop.map(({ name, href, icon: IconComponent }) => (
+                {socialLinksDesktop.map(({ name, href, logo }) => (
                   <a
                     key={name}
                     href={href}
                     title={name}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:scale-110 flex items-center justify-center transition-all duration-200 text-gray-500 hover:text-vatican-blue"
+                    className="hover:scale-110 flex items-center justify-center transition-transform duration-200"
                   >
-                    <IconComponent size={18} strokeWidth={2} />
+                    <img src={logo} alt={name} className="w-[18px] h-[18px] object-contain opacity-80 hover:opacity-100" />
                   </a>
                 ))}
               </div>
@@ -324,16 +324,16 @@ export default function Header() {
 
               {/* Mobile: Socials + Hamburger (right side) */}
               <div className="lg:hidden flex items-center justify-end shrink-0">
-                {socialLinksMobile.map(({ name, href, icon: IconComponent }) => (
+                {socialLinksMobile.map(({ name, href, logo }) => (
                   <a
                     key={name}
                     href={href}
                     title={name}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-[34px] sm:w-[40px] h-[44px] flex items-center justify-center transition-all duration-200 active:scale-95 text-white/80 hover:text-white"
+                    className="w-[34px] sm:w-[40px] h-[44px] flex items-center justify-center transition-transform duration-200 active:scale-95"
                   >
-                    <IconComponent size={20} strokeWidth={2} />
+                    <img src={logo} alt={name} className="w-[20px] h-[20px] object-contain" />
                   </a>
                 ))}
                 <div className="w-[1px] h-4 bg-white/20 mx-1 sm:mx-2" />
