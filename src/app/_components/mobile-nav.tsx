@@ -58,21 +58,21 @@ export default function MobileNav() {
           href={NAV_CENTER.href}
           className="flex-1 h-full relative flex items-center justify-center overflow-visible"
         >
-          {/* Label inside bar */}
+          {/* Label inside bar — 8px from top */}
           <span
-            className={`absolute top-[3px] text-[10px] font-semibold leading-none tracking-wide transition-colors duration-200 ${
+            className={`absolute top-[8px] text-[10px] font-semibold leading-none tracking-wide transition-colors duration-200 ${
               isCenterActive ? "text-vatican-blue" : "text-slate-400"
             }`}
           >
             {NAV_CENTER.label}
           </span>
 
-          {/* FAB circle — max size, overlaps bar bottom */}
+          {/* FAB circle — starts 4px below label bottom (8+10+4=22px) */}
           <div
             className={`absolute w-[64px] h-[64px] rounded-full flex items-center justify-center border-[3px] border-white z-20 transition-colors duration-200 shadow-[0_6px_20px_rgba(0,0,0,0.22)] ${
               isCenterActive ? "bg-vatican-blue" : "bg-slate-700"
             }`}
-            style={{ top: 14 }}
+            style={{ top: 22 }}
           >
             {/* Placeholder — thay bằng <Image> avatar sau */}
             <Award size={28} strokeWidth={2} className="text-white" />
