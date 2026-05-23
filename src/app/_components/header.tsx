@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Container from "./container";
 import Image from "next/image";
-import { Search, Menu, X, Star, Award, Crown, Milestone, Bell, Flame, BookText, Music, MessageSquare, NotebookText, Calendar, MapPin, Clock, BookHeart, CalendarDays, HeartHandshake, Newspaper } from "lucide-react";
+import { Search, Menu, X, Star, Award, Crown, Milestone, Bell, Flame, BookText, Music, MessageSquare, NotebookText, Calendar, MapPin, Clock, BookHeart, CalendarDays, HeartHandshake, Newspaper, Youtube, Facebook, Tiktok } from "lucide-react";
 
 // Map section → pathname tương ứng, dùng để validate ref tránh stale
 const SECTION_PATH: Record<string, string> = {
@@ -22,15 +22,15 @@ const SECTION_PATH: Record<string, string> = {
 
 
 const socialLinksMobile = [
-  { name: "YouTube",   href: "https://www.youtube.com/@chatruongbuudiep",  logo: "/platforms/youtube - MXH.svg" },
-  { name: "TikTok",    href: "https://www.tiktok.com/@chatruongbuudiep",   logo: "/platforms/tiktok - MXH.svg" },
-  { name: "Facebook",  href: "https://www.facebook.com/chatruongbuudiep",  logo: "/platforms/facebook - MXH.svg" },
+  { name: "YouTube",   href: "https://www.youtube.com/@chatruongbuudiep",  icon: Youtube },
+  { name: "TikTok",    href: "https://www.tiktok.com/@chatruongbuudiep",   icon: Tiktok },
+  { name: "Facebook",  href: "https://www.facebook.com/chatruongbuudiep",  icon: Facebook },
 ];
 
 const socialLinksDesktop = [
-  { name: "YouTube",   href: "https://www.youtube.com/@chatruongbuudiep",  logo: "/platforms/youtube.svg" },
-  { name: "TikTok",    href: "https://www.tiktok.com/@chatruongbuudiep",   logo: "/platforms/tiktok.svg" },
-  { name: "Facebook",  href: "https://www.facebook.com/chatruongbuudiep",  logo: "/platforms/facebook.svg" },
+  { name: "YouTube",   href: "https://www.youtube.com/@chatruongbuudiep",  icon: Youtube },
+  { name: "TikTok",    href: "https://www.tiktok.com/@chatruongbuudiep",   icon: Tiktok },
+  { name: "Facebook",  href: "https://www.facebook.com/chatruongbuudiep",  icon: Facebook },
 ];
 
 const subMenuLinks = [
@@ -215,16 +215,16 @@ export default function Header() {
               {/* Social icons */}
               <div className="flex items-center gap-3">
                 <div className="w-[1px] h-4 bg-gray-300 mr-2" /> {/* Divider */}
-                {socialLinksDesktop.map(({ name, href, logo }) => (
+                {socialLinksDesktop.map(({ name, href, icon: IconComponent }) => (
                   <a
                     key={name}
                     href={href}
                     title={name}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:scale-110 flex items-center justify-center transition-transform duration-200"
+                    className="hover:scale-110 flex items-center justify-center transition-all duration-200 text-gray-500 hover:text-vatican-blue"
                   >
-                    <img src={logo} alt={name} className="w-[18px] h-[18px] object-contain opacity-80 hover:opacity-100" />
+                    <IconComponent size={18} strokeWidth={2} />
                   </a>
                 ))}
               </div>
@@ -324,16 +324,16 @@ export default function Header() {
 
               {/* Mobile: Socials + Hamburger (right side) */}
               <div className="lg:hidden flex items-center justify-end shrink-0">
-                {socialLinksMobile.map(({ name, href, logo }) => (
+                {socialLinksMobile.map(({ name, href, icon: IconComponent }) => (
                   <a
                     key={name}
                     href={href}
                     title={name}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-[34px] sm:w-[40px] h-[44px] flex items-center justify-center transition-transform duration-200 active:scale-95"
+                    className="w-[34px] sm:w-[40px] h-[44px] flex items-center justify-center transition-all duration-200 active:scale-95 text-white/80 hover:text-white"
                   >
-                    <img src={logo} alt={name} className="w-[20px] h-[20px] object-contain" />
+                    <IconComponent size={20} strokeWidth={2} />
                   </a>
                 ))}
                 <div className="w-[1px] h-4 bg-white/20 mx-1 sm:mx-2" />
@@ -350,25 +350,6 @@ export default function Header() {
           </Container>
         </div>
 
-        {/* Mobile Tab Bar */}
-        <div className="md:hidden bg-white border-b border-gray-200 shadow-sm relative z-10">
-          <div className="flex overflow-x-auto no-scrollbar">
-            {subMenuLinks.map(({ label, href, section }) => (
-              <Link
-                key={section}
-                href={href}
-                onClick={() => { pendingSubSection.current = section; setActiveSection(section); setIsMobileMenuOpen(false); }}
-                className={`shrink-0 py-3 px-4 flex justify-center items-center text-[16px] font-semibold transition-colors ${
-                  activeSection === section 
-                    ? 'text-vatican-blue' 
-                    : 'text-gray-500 hover:text-vatican-dark'
-                }`}
-              >
-                <span>{label}</span>
-              </Link>
-            ))}
-          </div>
-        </div>
 
         {/* Mobile Menu Dropdown */}
         {isMobileMenuOpen && (
