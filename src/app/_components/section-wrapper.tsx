@@ -24,26 +24,28 @@ export function SectionWrapper({
 }: SectionWrapperProps) {
   const [isOpen, setIsOpen] = useState(true);
 
-  const headerBg = theme === "red" ? "bg-vatican-blue border-transparent border-l-[4px] border-l-white/40" : "bg-white border-l-[4px] border-l-[#fcd34d]";
+  const accentBar = theme === "red" ? "bg-white/30" : "bg-amber-300";
   const headerText = theme === "red" ? "text-white" : "text-vatican-blue";
+  const headerBg = theme === "red" ? "bg-vatican-blue" : "bg-white";
   const hoverBg = theme === "red" ? "hover:bg-vatican-blue/95" : "hover:bg-gray-50/80";
   const btnBg = theme === "red" ? "bg-black/10 text-white" : "bg-vatican-blue/5 text-vatican-blue";
 
   return (
     <div id={id} className={`bg-white rounded-lg overflow-hidden flex flex-col ${className}`}>
-      <button
-        type="button"
-        aria-expanded={isOpen}
-        className={`w-full ${headerBg} ${headerText} text-[15px] lg:text-[16px] font-bold px-3 sm:px-5 h-[46px] flex items-center gap-2 shrink-0 cursor-pointer select-none transition-colors ${hoverBg} group`}
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <span className="flex-1 text-left">{title}</span>
-        <div className={`rounded p-0.5 ml-auto transition-transform duration-300 ease-in-out ${isOpen ? 'rotate-180' : 'rotate-0'} ${btnBg}`}>
-          <ChevronDown size={20} strokeWidth={2.5} />
-        </div>
-      </button>
-      {/* grid-rows-[0fr/1fr]: kỹ thuật animate height 0→auto bằng CSS Grid,
-           vì CSS transition không hỗ trợ height: auto trực tiếp */}
+      <div className={`flex items-stretch shrink-0 ${headerBg}`}>
+        <div className={`w-1 shrink-0 ${accentBar}`} />
+        <button
+          type="button"
+          aria-expanded={isOpen}
+          className={`flex-1 ${headerText} text-[15px] lg:text-[16px] font-bold px-3 sm:px-5 h-[46px] flex items-center gap-2 cursor-pointer select-none transition-colors ${hoverBg} group`}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <span className="flex-1 text-left">{title}</span>
+          <div className={`rounded p-0.5 ml-auto transition-transform duration-300 ease-in-out ${isOpen ? 'rotate-180' : 'rotate-0'} ${btnBg}`}>
+            <ChevronDown size={20} strokeWidth={2.5} />
+          </div>
+        </button>
+      </div>
       <div
         className={`grid transition-all duration-300 ease-in-out flex-1 ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
       >
