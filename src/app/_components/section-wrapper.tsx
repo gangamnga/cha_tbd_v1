@@ -24,7 +24,7 @@ export function SectionWrapper({
 }: SectionWrapperProps) {
   const [isOpen, setIsOpen] = useState(true);
 
-  const headerBg = theme === "red" ? "bg-vatican-blue border-transparent border-l-[4px] border-l-white/40" : "bg-white border-solid border-b-[3px] border-b-[#fcd34d] border-l-[4px] border-l-vatican-blue";
+  const headerBg = theme === "red" ? "bg-vatican-blue border-transparent border-l-[4px] border-l-white/40" : "bg-white border-l-[4px] border-l-[#fcd34d]";
   const headerText = theme === "red" ? "text-white" : "text-vatican-blue";
   const hoverBg = theme === "red" ? "hover:bg-vatican-blue/95" : "hover:bg-gray-50/80";
   const btnBg = theme === "red" ? "bg-black/10 text-white" : "bg-vatican-blue/5 text-vatican-blue";
