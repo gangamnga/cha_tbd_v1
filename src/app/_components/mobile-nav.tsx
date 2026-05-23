@@ -69,7 +69,7 @@ export default function MobileNav() {
 
           {/* FAB circle — starts 4px below label bottom (8+10+4=22px) */}
           <div
-            className={`absolute w-[64px] h-[64px] rounded-full flex items-center justify-center border-[3px] border-white z-20 transition-colors duration-200 shadow-[0_6px_20px_rgba(0,0,0,0.22)] ${
+            className={`absolute w-[64px] h-[64px] rounded-full flex items-center justify-center border-[3px] border-white z-20 transition-colors duration-200 shadow-[0_4px_10px_rgba(0,0,0,0.18)] ${
               isCenterActive ? "bg-vatican-blue" : "bg-slate-700"
             }`}
             style={{ top: 22 }}
