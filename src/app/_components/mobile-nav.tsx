@@ -28,8 +28,8 @@ export default function MobileNav() {
     pathname === NAV_CENTER.href || pathname.startsWith(NAV_CENTER.href);
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white border-t border-slate-100 shadow-[0_-4px_20px_rgba(0,0,0,0.07)] pb-[env(safe-area-inset-bottom,0px)]">
-      <div className="flex items-end justify-around h-[60px] px-2 relative">
+    <div className="fixed top-0 left-0 right-0 z-50 lg:hidden bg-white border-b border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.07)]">
+      <div className="flex items-center justify-around h-[60px] px-2 relative">
 
         {/* Left items */}
         {NAV_LEFT.map((item) => {
@@ -53,23 +53,21 @@ export default function MobileNav() {
           );
         })}
 
-        {/* Center — elevated avatar button */}
+        {/* Center — elevated avatar button (drops down below bar) */}
         <Link
           href={NAV_CENTER.href}
-          className="flex flex-col items-center justify-end flex-1 h-full pb-1 relative"
+          className="flex flex-col items-center justify-center flex-1 h-full relative"
         >
           <div
-            className={`absolute -top-4 w-[54px] h-[54px] rounded-full flex items-center justify-center shadow-lg border-[3px] transition-all duration-200 ${
-              isCenterActive
-                ? "bg-vatican-blue border-white"
-                : "bg-slate-700 border-white"
+            className={`absolute -bottom-5 w-[54px] h-[54px] rounded-full flex items-center justify-center shadow-lg border-[3px] border-white transition-all duration-200 ${
+              isCenterActive ? "bg-vatican-blue" : "bg-slate-700"
             }`}
           >
-            {/* Placeholder — anh thay bằng <Image> avatar sau */}
+            {/* Placeholder — thay bằng <Image> avatar sau */}
             <Award size={26} strokeWidth={2} className="text-white" />
           </div>
           <span
-            className={`text-[10px] font-semibold leading-none tracking-wide mt-auto mb-0 transition-colors duration-200 ${
+            className={`text-[10px] font-semibold leading-none tracking-wide transition-colors duration-200 ${
               isCenterActive ? "text-vatican-blue" : "text-slate-400"
             }`}
           >

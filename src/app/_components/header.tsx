@@ -191,7 +191,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="w-full sticky top-0 z-50 flex flex-col">
+      <header className="w-full fixed bottom-0 lg:sticky lg:top-0 lg:bottom-auto z-50 flex flex-col">
 
         {/* Desktop Top Sub-bar */}
         <div className="hidden md:block bg-gray-100 border-b border-gray-200">
@@ -353,7 +353,7 @@ export default function Header() {
 
         {/* Mobile Menu Dropdown */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-[100%] left-0 w-full bg-vatican-blue text-white z-10 flex flex-col h-[calc(100dvh-114px)] overflow-y-auto overscroll-none pb-20">
+          <div className="lg:hidden absolute bottom-[100%] left-0 w-full bg-vatican-blue text-white z-10 flex flex-col h-[calc(100dvh-130px)] overflow-y-auto overscroll-none pb-6">
             <Container>
               <nav className="flex flex-col w-full py-4 gap-1">
                 {navLinks.map((link) => {
