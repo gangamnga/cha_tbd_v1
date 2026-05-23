@@ -12,7 +12,7 @@ interface Hymn  { title: string; artist: string; image_url: string | null }
 export function ThongBaoWidget({ announcementImageUrl }: { announcementImageUrl: string | null }) {
   return (
     <SectionWrapper
-      title="THÔNG BÁO"
+      title="Thông Báo"
       icon={<Bell size={18} strokeWidth={2.5} />}
       theme="yellow"
       className="h-full"
@@ -29,7 +29,7 @@ export function LoiKinhWidget({ prayers }: { prayers: Prayer[] }) {
 
   return (
     <SectionWrapper
-      title="LỜI KINH"
+      title="Lời Kinh"
       icon={<BookText size={18} strokeWidth={2.5} />}
       theme="yellow"
       className="h-full"
@@ -85,7 +85,7 @@ export function LoiKinhWidget({ prayers }: { prayers: Prayer[] }) {
 export function ThanhCaWidget({ hymns }: { hymns: Hymn[] }) {
   return (
     <SectionWrapper
-      title="THÁNH CA"
+      title="Thánh Ca"
       icon={<Music size={18} strokeWidth={2.5} />}
       theme="yellow"
       className="h-full"

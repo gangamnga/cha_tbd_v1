@@ -81,7 +81,7 @@ export default async function TieuSuPage() {
       <Container>
 
         {/* ROW 1: Lược sử */}
-        <SectionWrapper id="luoc-su" title="LƯỢC SỬ" icon={<Star size={18} strokeWidth={2.5} />} theme="yellow" className="mb-8">
+        <SectionWrapper id="luoc-su" title="Lược Sử" icon={<Star size={18} strokeWidth={2.5} />} theme="yellow" className="mb-8">
           <div className="bg-white px-2 sm:px-4 lg:px-5 py-2.5 sm:py-4 lg:py-5">
             <div className="flex flex-col sm:flex-row gap-[20px]">
               <div className="w-[200px] sm:w-[360px] mx-auto sm:mx-0 shrink-0">
@@ -115,14 +115,14 @@ export default async function TieuSuPage() {
         </SectionWrapper>
 
         {/* ROW 2: Tiến trình phong Chân Phước */}
-        <SectionWrapper title="TIẾN TRÌNH PHONG CHÂN PHƯỚC" icon={<Award size={18} strokeWidth={2.5} />} theme="yellow" className="mb-8" id="phong-chan-phuoc">
+        <SectionWrapper title="Tiến Trình Phong Chân Phước" icon={<Award size={18} strokeWidth={2.5} />} theme="yellow" className="mb-8" id="phong-chan-phuoc">
           <div className="bg-white px-2 sm:px-4 lg:px-5 py-2.5 sm:py-4 lg:py-5">
             <StepList steps={beatSteps ?? []} />
           </div>
         </SectionWrapper>
 
         {/* ROW 3: Tiến trình phong Thánh */}
-        <SectionWrapper title="TIẾN TRÌNH PHONG THÁNH" icon={<Crown size={18} strokeWidth={2.5} />} theme="yellow" className="mb-8" id="phong-thanh">
+        <SectionWrapper title="Tiến Trình Phong Thánh" icon={<Crown size={18} strokeWidth={2.5} />} theme="yellow" className="mb-8" id="phong-thanh">
           <div className="bg-white px-2 sm:px-4 lg:px-5 py-2.5 sm:py-4 lg:py-5 flex flex-col gap-5">
             {/* Mô tả */}
             <div className="bg-amber-50 border border-amber-200 rounded-lg px-3 sm:px-5 py-3 sm:py-4">
@@ -149,7 +149,7 @@ export default async function TieuSuPage() {
         </SectionWrapper>
 
         {/* ROW 4: Hành trình đức tin */}
-        <SectionWrapper title="HÀNH TRÌNH ĐỨC TIN" icon={<Milestone size={18} strokeWidth={2.5} />} theme="yellow" id="hanh-trinh">
+        <SectionWrapper title="Hành Trình Đức Tin" icon={<Milestone size={18} strokeWidth={2.5} />} theme="yellow" id="hanh-trinh">
           <BiographyTimeline showDescription={true} milestones={milestones ?? []} />
         </SectionWrapper>
 

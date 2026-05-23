@@ -5,7 +5,7 @@ import { useState } from "react";
 
 interface SectionWrapperProps {
   title: string;
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   children: React.ReactNode;
   theme?: "red" | "yellow";
   className?: string;
@@ -15,7 +15,7 @@ interface SectionWrapperProps {
 
 export function SectionWrapper({
   title,
-  icon,
+  icon: _icon,
   children,
   theme = "yellow",
   className = "",
@@ -24,9 +24,8 @@ export function SectionWrapper({
 }: SectionWrapperProps) {
   const [isOpen, setIsOpen] = useState(true);
 
-  const headerBg = theme === "red" ? "bg-vatican-blue border-transparent" : "bg-white border-solid border-b-[3px] border-b-[#fcd34d]";
+  const headerBg = theme === "red" ? "bg-vatican-blue border-transparent border-l-[4px] border-l-white/40" : "bg-white border-solid border-b-[3px] border-b-[#fcd34d] border-l-[4px] border-l-vatican-blue";
   const headerText = theme === "red" ? "text-white" : "text-vatican-blue";
-  const iconColor = theme === "red" ? "text-white/90 group-hover:text-white" : "text-vatican-blue/80 group-hover:text-vatican-blue";
   const hoverBg = theme === "red" ? "hover:bg-vatican-blue/95" : "hover:bg-gray-50/80";
   const btnBg = theme === "red" ? "bg-black/10 text-white" : "bg-vatican-blue/5 text-vatican-blue";
 
@@ -35,10 +34,9 @@ export function SectionWrapper({
       <button
         type="button"
         aria-expanded={isOpen}
-        className={`w-full ${headerBg} ${headerText} text-[16px] lg:text-[18px] font-bold px-2 sm:px-5 h-[48px] uppercase tracking-wide flex items-center gap-2 shrink-0 cursor-pointer select-none transition-colors ${hoverBg} group`}
+        className={`w-full ${headerBg} ${headerText} text-[15px] lg:text-[16px] font-bold px-3 sm:px-5 h-[46px] flex items-center gap-2 shrink-0 cursor-pointer select-none transition-colors ${hoverBg} group`}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className={`${iconColor} transition-colors`}>{icon}</span>
         <span className="flex-1 text-left">{title}</span>
         <div className={`rounded p-0.5 ml-auto transition-transform duration-300 ease-in-out ${isOpen ? 'rotate-180' : 'rotate-0'} ${btnBg}`}>
           <ChevronDown size={20} strokeWidth={2.5} />

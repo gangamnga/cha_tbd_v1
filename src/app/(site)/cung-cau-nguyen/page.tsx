@@ -46,7 +46,7 @@ export default async function CungCauNguyenPage() {
 
           {/* Thông Báo — 1/3 */}
           <SectionWrapper
-            title="THÔNG BÁO"
+            title="Thông Báo"
             icon={<Bell size={18} strokeWidth={2.5} />}
             theme="yellow"
             className="lg:col-span-1"
@@ -59,7 +59,7 @@ export default async function CungCauNguyenPage() {
 
           {/* Gửi Ý Chỉ Cầu Nguyện — 2/3 */}
           <SectionWrapper
-            title="GỬI Ý CHỈ CẦU NGUYỆN"
+            title="Gửi Ý Chỉ Cầu Nguyện"
             icon={<Flame size={18} strokeWidth={2.5} />}
             theme="yellow"
             className="lg:col-span-2"
@@ -82,7 +82,7 @@ export default async function CungCauNguyenPage() {
 
         {/* ROW 2: Lời Kinh */}
         <SectionWrapper
-          title="LỜI KINH"
+          title="Lời Kinh"
           icon={<BookText size={18} strokeWidth={2.5} />}
           theme="yellow"
           className="mb-8"
@@ -95,7 +95,7 @@ export default async function CungCauNguyenPage() {
 
         {/* ROW 3: Thánh Ca */}
         <SectionWrapper
-          title="THÁNH CA"
+          title="Thánh Ca"
           icon={<Music size={18} strokeWidth={2.5} />}
           theme="yellow"
           id="thanh-ca"

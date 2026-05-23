@@ -81,7 +81,7 @@ export default async function OnLanhPage({
         {/* ROW 1: Nhật ký chứng nhân */}
         <SectionWrapper
           id="nhat-ky-chung-nhan"
-          title="NHẬT KÝ CHỨNG NHÂN"
+          title="Nhật Ký Chứng Nhân"
           icon={<BookHeart size={18} strokeWidth={2.5} />}
           theme="yellow"
           className="mb-8"
@@ -140,7 +140,7 @@ export default async function OnLanhPage({
         {/* ROW 2: Gửi lời chứng */}
         <SectionWrapper
           id="gui-loi-chung"
-          title="GỬI LỜI CHỨNG CỦA BẠN"
+          title="Gửi Lời Chứng Của Bạn"
           icon={<MessageSquare size={18} strokeWidth={2.5} />}
           theme="yellow"
         >

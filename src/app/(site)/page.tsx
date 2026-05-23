@@ -119,7 +119,7 @@ export default async function Index() {
           {/* TIN NHANH — mobile 1st, desktop row1 cols 1-9 */}
           <div className="order-1 lg:col-start-1 lg:col-span-9 lg:row-start-1 flex flex-col">
             <SectionWrapper
-              title="TIN NHANH"
+              title="Tin Nhanh"
               icon={<Megaphone size={18} strokeWidth={2.5} />}
               theme="yellow"
               className="flex flex-col h-full"
@@ -133,7 +133,7 @@ export default async function Index() {
           {/* NHẬT KÝ CHỨNG NHÂN — mobile 2nd, desktop row3 full */}
           <div className="order-2 lg:col-start-1 lg:col-span-12 lg:row-start-3">
             <SectionWrapper
-              title="NHẬT KÝ CHỨNG NHÂN"
+              title="Nhật Ký Chứng Nhân"
               icon={<BookHeart size={18} strokeWidth={2.5} />}
               theme="yellow"
             >
@@ -157,7 +157,7 @@ export default async function Index() {
           {/* HOẠT ĐỘNG CỘNG ĐỒNG — mobile 4th, desktop row4 full */}
           <div className="order-4 lg:col-start-1 lg:col-span-12 lg:row-start-4">
             <SectionWrapper
-              title="HOẠT ĐỘNG CỘNG ĐỒNG"
+              title="Hoạt Động Cộng Đồng"
               icon={<Newspaper size={18} strokeWidth={2.5} />}
               theme="yellow"
             >
@@ -176,7 +176,7 @@ export default async function Index() {
           {/* GÓC HÀNH HƯƠNG — mobile 5th, desktop row1 cols 10-12 */}
           <div className="order-5 lg:col-start-10 lg:col-span-3 lg:row-start-1 flex flex-col">
             <SectionWrapper
-              title="GÓC HÀNH HƯƠNG"
+              title="Góc Hành Hương"
               icon={<NotebookText size={18} strokeWidth={2.5} />}
               theme="yellow"
               className="flex flex-col h-full"

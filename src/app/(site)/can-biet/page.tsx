@@ -90,7 +90,7 @@ export default async function CanBietPage() {
         <div className="flex flex-col lg:flex-row items-stretch gap-5 lg:gap-8 mb-8">
 
           <SectionWrapper
-            title="ĐỊA CHỈ"
+            title="Địa Chỉ"
             icon={<MapPin size={18} strokeWidth={2.5} />}
             theme="yellow"
             className="w-full lg:w-2/3"
@@ -100,7 +100,7 @@ export default async function CanBietPage() {
           </SectionWrapper>
 
           <SectionWrapper
-            title="GIỜ LỄ"
+            title="Giờ Lễ"
             icon={<Clock size={18} strokeWidth={2.5} />}
             theme="yellow"
             className="w-full lg:w-1/3"
@@ -150,7 +150,7 @@ export default async function CanBietPage() {
 
           {/* LIÊN HỆ CỘNG ĐỒNG */}
           <SectionWrapper
-            title="THAM GIA CỘNG ĐỒNG"
+            title="Tham Gia Cộng Đồng"
             icon={<HeartHandshake size={18} strokeWidth={2.5} />}
             theme="yellow"
             className="w-full lg:w-1/3 flex flex-col"
@@ -262,7 +262,7 @@ export default async function CanBietPage() {
 
           {/* HOẠT ĐỘNG CỘNG ĐỒNG */}
           <SectionWrapper
-            title="HOẠT ĐỘNG CỘNG ĐỒNG"
+            title="Hoạt Động Cộng Đồng"
             icon={<Newspaper size={18} strokeWidth={2.5} />}
             theme="yellow"
             className="w-full lg:w-2/3 flex flex-col"
@@ -277,7 +277,7 @@ export default async function CanBietPage() {
 
         {/* Khung 3: LỊCH CÔNG GIÁO */}
         <SectionWrapper
-          title="LỊCH CÔNG GIÁO"
+          title="Lịch Công Giáo"
           icon={<CalendarDays size={18} strokeWidth={2.5} />}
           theme="yellow"
           id="lich-cong-giao"

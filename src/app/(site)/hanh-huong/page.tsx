@@ -45,7 +45,7 @@ export default async function HanhHuongPage() {
         {/* ROW 1: Góc Hành Hương */}
         <SectionWrapper
           id="goc-hanh-huong"
-          title="GÓC HÀNH HƯƠNG"
+          title="Góc Hành Hương"
           icon={<NotebookText size={18} strokeWidth={2.5} />}
           theme="yellow"
           className="mb-8"
@@ -58,7 +58,7 @@ export default async function HanhHuongPage() {
         {/* ROW 2: Lịch Hành Hương Cộng Đồng */}
         <SectionWrapper
           id="lich-hanh-huong"
-          title="LỊCH HÀNH HƯƠNG"
+          title="Lịch Hành Hương"
           icon={<Calendar size={18} strokeWidth={2.5} />}
           theme="yellow"
         >
