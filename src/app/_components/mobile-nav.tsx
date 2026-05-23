@@ -27,9 +27,6 @@ export default function MobileNav() {
   const isCenterActive =
     pathname === NAV_CENTER.href || pathname.startsWith(NAV_CENTER.href);
 
-  const circleColor  = isCenterActive ? "#1a3a8f" : "#334155";
-  const textColor    = isCenterActive ? "#1a3a8f" : "#94a3b8";
-
   return (
     <div className="fixed top-0 left-0 right-0 z-50 lg:hidden bg-white border-b border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.07)] overflow-visible">
       <div className="flex items-center justify-around h-[60px] px-2 relative overflow-visible">
@@ -56,55 +53,30 @@ export default function MobileNav() {
           );
         })}
 
-        {/* Center — circle with curved text around bottom */}
+        {/* Center — FAB style: label in bar, circle overlaps bar bottom */}
         <Link
           href={NAV_CENTER.href}
-          className="flex-1 flex items-center justify-center h-full relative overflow-visible"
+          className="flex-1 h-full relative flex items-center justify-center overflow-visible"
         >
-          {/* Circle button hanging below bar */}
-          <div
-            className="absolute border-[3px] border-white shadow-lg rounded-full flex items-center justify-center z-10 transition-colors duration-200"
-            style={{
-              width: 52,
-              height: 52,
-              bottom: -20,
-              left: "50%",
-              transform: "translateX(-50%)",
-              backgroundColor: circleColor,
-            }}
+          {/* Label inside bar */}
+          <span
+            className={`absolute top-[8px] text-[10px] font-semibold leading-none tracking-wide transition-colors duration-200 ${
+              isCenterActive ? "text-vatican-blue" : "text-slate-400"
+            }`}
           >
+            {NAV_CENTER.label}
+          </span>
+
+          {/* FAB circle — overlaps bar bottom edge */}
+          <div
+            className={`absolute w-[52px] h-[52px] rounded-full flex items-center justify-center border-[3px] border-white z-20 transition-colors duration-200 shadow-[0_4px_16px_rgba(0,0,0,0.20)]  ${
+              isCenterActive ? "bg-vatican-blue" : "bg-slate-700"
+            }`}
+            style={{ top: 20 }}
+          >
+            {/* Placeholder — thay bằng <Image> avatar sau */}
             <Award size={24} strokeWidth={2} className="text-white" />
           </div>
-
-          {/* SVG curved text — radius 30 = circleRadius(26) + gap(4) */}
-          {/* SVG bottom=-34 aligns SVG y=0 with circle center */}
-          <svg
-            width="84"
-            height="36"
-            viewBox="0 0 84 36"
-            overflow="visible"
-            style={{
-              position: "absolute",
-              bottom: -34,
-              left: "50%",
-              transform: "translateX(-50%)",
-            }}
-          >
-            <defs>
-              <path id="navCurve" d="M 12,0 A 30,30 0 0,1 72,0" />
-            </defs>
-            <text
-              fontSize="10"
-              fontWeight="600"
-              letterSpacing="0.4"
-              fontFamily="inherit"
-              fill={textColor}
-            >
-              <textPath href="#navCurve" startOffset="50%" textAnchor="middle">
-                Tiểu Sử
-              </textPath>
-            </text>
-          </svg>
         </Link>
 
         {/* Right items */}
