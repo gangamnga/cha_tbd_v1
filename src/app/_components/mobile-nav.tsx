@@ -56,16 +56,8 @@ export default function MobileNav() {
         {/* Center — elevated avatar button (drops down below bar) */}
         <Link
           href={NAV_CENTER.href}
-          className="flex flex-col items-center justify-center flex-1 h-full relative"
+          className="flex flex-col items-center justify-start flex-1 h-full pt-2 relative"
         >
-          <div
-            className={`absolute -bottom-5 w-[54px] h-[54px] rounded-full flex items-center justify-center shadow-lg border-[3px] border-white transition-all duration-200 ${
-              isCenterActive ? "bg-vatican-blue" : "bg-slate-700"
-            }`}
-          >
-            {/* Placeholder — thay bằng <Image> avatar sau */}
-            <Award size={26} strokeWidth={2} className="text-white" />
-          </div>
           <span
             className={`text-[10px] font-semibold leading-none tracking-wide transition-colors duration-200 ${
               isCenterActive ? "text-vatican-blue" : "text-slate-400"
@@ -73,6 +65,14 @@ export default function MobileNav() {
           >
             {NAV_CENTER.label}
           </span>
+          <div
+            className={`absolute bottom-[-22px] w-[50px] h-[50px] rounded-full flex items-center justify-center shadow-lg border-[3px] border-white transition-all duration-200 ${
+              isCenterActive ? "bg-vatican-blue" : "bg-slate-700"
+            }`}
+          >
+            {/* Placeholder — thay bằng <Image> avatar sau */}
+            <Award size={24} strokeWidth={2} className="text-white" />
+          </div>
         </Link>
 
         {/* Right items */}
