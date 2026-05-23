@@ -24,7 +24,7 @@ export default function MobileNav() {
   if (!mounted) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white/95 backdrop-blur-md border-t border-slate-100 shadow-[0_-4px_24px_rgba(0,0,0,0.06)] pb-[env(safe-area-inset-bottom,16px)] pt-3.5 px-4">
+    <div className="sticky top-[70px] left-0 right-0 z-40 lg:hidden bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-[0_4px_16px_rgba(0,0,0,0.04)] py-2.5 px-4">
       <div className="flex items-center justify-between max-w-md mx-auto">
         {NAV_ITEMS.map((item) => {
           const isActive =
